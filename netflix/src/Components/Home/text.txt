@@ -1,0 +1,19 @@
+ const url =
+                "https://imdb8.p.rapidapi.com/title/get-images?tconst=tt0944947&limit=25";
+            const options = {
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Key":
+                        "93d1be6721msh8e9feae316344b8p135ecfjsnbfc32e103d69",
+                    "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
+                },
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                console.log(result.images);
+                setmovies(result.images);
+            } catch (error) {
+                console.error(error);
+            }
